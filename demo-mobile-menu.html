@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 Demo Mobile Menu - Thẩm Mỹ Hương Mận</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/mobile-menu-new.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #C41E3A;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+            --border-color: #e8d5d5;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .demo-header {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .demo-header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .demo-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            background: white;
+        }
+        
+        .nav-menu > li {
+            border-bottom: 1px solid rgba(196, 30, 58, 0.1);
+        }
+        
+        .nav-menu > li:last-child {
+            border-bottom: none;
+        }
+        
+        .demo-footer {
+            padding: 20px;
+            text-align: center;
+            background: #f9f9f9;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .demo-footer p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .demo-footer .status {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>📱 Demo Mobile Menu</h1>
+            <p>Thẩm Mỹ Viện Hương Mận</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <!-- Giới Thiệu -->
+            <li class="dropdown">
+                <a href="#about">Giới Thiệu <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="#intro">Về Hương Mận</a></li>
+                        <li><a href="#team">Đội Ngũ Bác Sĩ</a></li>
+                        <li><a href="#facility">Cơ Sở Vật Chất</a></li>
+                        <li><a href="#testimonials">Khách Hàng Nói Gì</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Phẫu Thuật Thẩm Mỹ -->
+            <li class="dropdown mega-menu">
+                <a href="#surgery">Phẫu Thuật Thẩm Mỹ <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu mega">
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-col">
+                            <h4>Phẫu Thuật Mắt</h4>
+                            <ul>
+                                <li><a href="#service1">Bấm Mí Mắt</a></li>
+                                <li><a href="#service2">Tạo Mí Mắt Đôi</a></li>
+                                <li><a href="#service3">Sửa Sụp Mi</a></li>
+                                <li><a href="#service4">Kéo Khóe Mắt</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h4>Phẫu Thuật Mũi</h4>
+                            <ul>
+                                <li><a href="#service5">Nâng Mũi Tổng Hợp</a></li>
+                                <li><a href="#service6">Nâng Đầu Mũi</a></li>
+                                <li><a href="#service7">Sửa Mũi Hỏng</a></li>
+                                <li><a href="#service8">Thu Gọn Cánh Mũi</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h4>Nâng Cơ Mặt</h4>
+                            <ul>
+                                <li><a href="#service9">Căng Da Mặt SMAS</a></li>
+                                <li><a href="#service10">Mini Facelift</a></li>
+                                <li><a href="#service11">Cấy Mỡ 5D</a></li>
+                                <li><a href="#service12">Nâng Cơ Chỉ Siêu Âm</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h4>Phẫu Thuật Khác</h4>
+                            <ul>
+                                <li><a href="#service13">Phẫu Thuật Hàm</a></li>
+                                <li><a href="#service14">Thẩm Mỹ Vùng Kín</a></li>
+                                <li><a href="#service15">Hút Mỡ Bụng</a></li>
+                                <li><a href="#service16">Nâng Ngực</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Khoa Da -->
+            <li class="dropdown mega-menu">
+                <a href="#derma">Khoa Da <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu mega">
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-col">
+                            <h4>Điều Trị Da</h4>
+                            <ul>
+                                <li><a href="#derma1">Trị Mụn Chuyên Sâu</a></li>
+                                <li><a href="#derma2">Trị Nám</a></li>
+                                <li><a href="#derma3">Laser Toning</a></li>
+                                <li><a href="#derma4">Peel Da Y Tế</a></li>
+                                <li><a href="#derma5">Mesotherapy</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h4>Giảm Béo & Cơ Thể</h4>
+                            <ul>
+                                <li><a href="#body1">Giảm Mỡ Bụng</a></li>
+                                <li><a href="#body2">Tan Mỡ Bắp Tay</a></li>
+                                <li><a href="#body3">Body Contouring</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Other menu items -->
+            <li><a href="#products">Sản Phẩm</a></li>
+            <li><a href="#promotions">Khuyến Mãi</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+        
+        <div class="demo-footer">
+            <p>✅ Menu mới - Redesigned & Optimized</p>
+            <span class="status">HOẠT ĐỘNG TỐT</span>
+        </div>
+    </div>
+
+    <script>
+        // Simple dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                    
+                    // Close other dropdowns
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) {
+                            other.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Close dropdown when clicking a submenu link
+            const subLinks = document.querySelectorAll('.dropdown-menu a');
+            subLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Allow navigation but show feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

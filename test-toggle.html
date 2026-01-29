@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Test Toggle - Menu Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/mobile-menu-new.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .test-header {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .test-header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .test-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            background: white;
+        }
+        
+        .nav-menu > li {
+            border-bottom: 1px solid rgba(196, 30, 58, 0.1);
+        }
+        
+        .nav-menu > li:last-child {
+            border-bottom: none;
+        }
+        
+        .nav-menu > li > a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-menu .dropdown.active > a {
+            background: linear-gradient(90deg, rgba(196, 30, 58, 0.05) 0%, transparent 100%);
+            color: #C41E3A;
+        }
+        
+        .test-footer {
+            padding: 20px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        
+        .test-footer h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .status-indicator::before {
+            content: "●";
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .console-log {
+            background: #1e1e1e;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 150px;
+            overflow-y: auto;
+            text-align: left;
+        }
+        
+        .console-log div {
+            margin-bottom: 5px;
+        }
+        
+        .instruction {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            text-align: left;
+        }
+        
+        .instruction h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .instruction ol {
+            margin-left: 20px;
+            color: #856404;
+        }
+        
+        .instruction li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 Test Toggle Menu</h1>
+            <p>Kiểm tra chức năng đóng/mở</p>
+        </div>
+        
+        <div class="instruction">
+            <h3>📋 Hướng Dẫn Test:</h3>
+            <ol>
+                <li><strong>Click</strong> "Phẫu Thuật Thẩm Mỹ" → Menu <strong>MỞ</strong></li>
+                <li><strong>Click LẦN 2</strong> → Menu <strong>ĐÓNG</strong></li>
+                <li>Mở F12 Console để xem logs</li>
+            </ol>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="dropdown mega-menu">
+                <a href="#surgery">Phẫu Thuật Thẩm Mỹ <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu mega">
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-col">
+                            <h4>Phẫu Thuật Mắt</h4>
+                            <ul>
+                                <li><a href="#1">Bấm Mí Mắt</a></li>
+                                <li><a href="#2">Tạo Mí Mắt Đôi</a></li>
+                                <li><a href="#3">Sửa Sụp Mi</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-col">
+                            <h4>Phẫu Thuật Mũi</h4>
+                            <ul>
+                                <li><a href="#4">Nâng Mũi Tổng Hợp</a></li>
+                                <li><a href="#5">Nâng Đầu Mũi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#derma">Khoa Da <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="#d1">Trị Mụn</a></li>
+                        <li><a href="#d2">Trị Nám</a></li>
+                        <li><a href="#d3">Laser Toning</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="test-footer">
+            <h3>Status:</h3>
+            <div class="status-indicator">
+                JS Đã Load
+            </div>
+            <div class="console-log" id="consoleLog">
+                <div>🚀 Mở F12 Console để xem chi tiết...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mobile-menu-toggle.js"></script>
+    
+    <script>
+        // Capture console.log and display in page
+        const consoleLogDiv = document.getElementById('consoleLog');
+        const originalLog = console.log;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const message = args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg) : arg
+            ).join(' ');
+            
+            const logEntry = document.createElement('div');
+            logEntry.textContent = message;
+            logEntry.style.color = message.includes('✅') ? '#0f0' : 
+                                   message.includes('⚠️') ? '#ff0' : 
+                                   message.includes('🖱️') ? '#0ff' : '#0f0';
+            
+            consoleLogDiv.appendChild(logEntry);
+            consoleLogDiv.scrollTop = consoleLogDiv.scrollHeight;
+        };
+    </script>
+</body>
+</html>

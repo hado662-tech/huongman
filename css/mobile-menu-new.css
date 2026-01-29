@@ -1,0 +1,245 @@
+/* ========================================
+   MOBILE MENU - REDESIGNED & OPTIMIZED
+   ======================================== */
+
+/* Mobile Menu Container */
+@media (max-width: 968px) {
+    /* Reset all dropdown styles */
+    .nav-menu .dropdown-menu,
+    .nav-menu .dropdown-menu.mega,
+    .nav-menu .mega-menu-content,
+    .nav-menu .mega-menu-col {
+        all: unset;
+    }
+    
+    /* Main dropdown container */
+    .nav-menu .dropdown-menu {
+        display: none;
+        background: linear-gradient(135deg, rgba(255, 244, 230, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+        margin: 10px 0;
+        padding: 0;
+        border-radius: 12px;
+        border-left: 4px solid #C41E3A;
+        box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .nav-menu .dropdown.active .dropdown-menu {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Mega menu specific */
+    .nav-menu .mega-menu .dropdown-menu.mega {
+        display: none;
+        position: relative;
+        transform: none;
+        left: auto;
+        min-width: auto;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 10px 0;
+        background: linear-gradient(135deg, rgba(255, 244, 230, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+        border-radius: 12px;
+        border-left: 4px solid #C41E3A;
+        box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .nav-menu .mega-menu.active .dropdown-menu.mega {
+        display: block;
+    }
+    
+    /* Mega menu content */
+    .nav-menu .mega-menu-content {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        box-sizing: border-box;
+    }
+    
+    /* Mega menu columns */
+    .nav-menu .mega-menu-col {
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+        box-sizing: border-box;
+    }
+    
+    .nav-menu .mega-menu-col:last-child {
+        margin-bottom: 10px;
+    }
+    
+    /* Section headings */
+    .nav-menu .mega-menu-col h4 {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        color: #C41E3A;
+        margin: 0 0 12px 0;
+        padding: 0 0 8px 0;
+        border-bottom: 2px solid rgba(196, 30, 58, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .nav-menu .mega-menu-col h4::before {
+        content: "📋";
+        margin-right: 8px;
+        font-size: 14px;
+    }
+    
+    /* Lists */
+    .nav-menu .mega-menu-col ul {
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* List items */
+    .nav-menu .mega-menu-col ul li {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(196, 30, 58, 0.1);
+        box-sizing: border-box;
+    }
+    
+    .nav-menu .mega-menu-col ul li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Links */
+    .nav-menu .mega-menu-col ul li a {
+        display: block;
+        width: 100%;
+        padding: 12px 15px;
+        color: #1a1a1a;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
+        overflow: visible;
+        white-space: normal;
+        word-wrap: break-word;
+        line-height: 1.5;
+    }
+    
+    .nav-menu .mega-menu-col ul li a::before {
+        content: "→";
+        display: inline-block;
+        margin-right: 8px;
+        color: #C41E3A;
+        font-weight: bold;
+        transition: transform 0.2s ease;
+    }
+    
+    .nav-menu .mega-menu-col ul li a:active,
+    .nav-menu .mega-menu-col ul li a:hover {
+        background: linear-gradient(90deg, rgba(196, 30, 58, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+        color: #C41E3A;
+        padding-left: 20px;
+    }
+    
+    .nav-menu .mega-menu-col ul li a:active::before,
+    .nav-menu .mega-menu-col ul li a:hover::before {
+        transform: translateX(3px);
+    }
+    
+    /* Regular dropdown menu (non-mega) */
+    .nav-menu .dropdown:not(.mega-menu) .dropdown-menu {
+        padding: 10px 0;
+    }
+    
+    .nav-menu .dropdown:not(.mega-menu) .dropdown-menu li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(196, 30, 58, 0.1);
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-menu .dropdown:not(.mega-menu) .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu .dropdown:not(.mega-menu) .dropdown-menu li a {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        color: #1a1a1a;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    
+    .nav-menu .dropdown:not(.mega-menu) .dropdown-menu li a:active,
+    .nav-menu .dropdown:not(.mega-menu) .dropdown-menu li a:hover {
+        background: rgba(196, 30, 58, 0.08);
+        color: #C41E3A;
+        padding-left: 25px;
+    }
+    
+    /* Main menu item (the trigger) */
+    .nav-menu > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+        border-bottom: 1px solid rgba(196, 30, 58, 0.1);
+        transition: all 0.2s ease;
+    }
+    
+    .nav-menu .dropdown.active > a {
+        background: linear-gradient(90deg, rgba(196, 30, 58, 0.05) 0%, transparent 100%);
+        color: #C41E3A;
+        border-left: 4px solid #C41E3A;
+        padding-left: 16px;
+    }
+    
+    /* Chevron icon animation */
+    .nav-menu .dropdown > a i.fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-menu .dropdown.active > a i.fa-chevron-down {
+        transform: rotate(180deg);
+    }
+}
+
+/* Touch feedback for mobile */
+@media (max-width: 968px) and (hover: none) {
+    .nav-menu .mega-menu-col ul li a:active {
+        transform: scale(0.98);
+    }
+}

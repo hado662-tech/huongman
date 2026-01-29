@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Grok AI API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .status.checking {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box h3 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .info-box p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        
+        .info-box code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .test-area {
+            margin-top: 30px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .response {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Test Grok AI API</h1>
+        <p class="subtitle">Kiểm tra xem Grok AI có hoạt động không</p>
+        
+        <div id="status" class="status checking">
+            ⏳ Đang kiểm tra API key...
+        </div>
+        
+        <div class="info-box">
+            <h3>📊 Thông Tin API:</h3>
+            <p><strong>API Key:</strong> <code id="apiKeyDisplay">Loading...</code></p>
+            <p><strong>Model:</strong> <code id="modelDisplay">Loading...</code></p>
+            <p><strong>Max Tokens:</strong> <code id="maxTokensDisplay">Loading...</code></p>
+            <p><strong>Temperature:</strong> <code id="temperatureDisplay">Loading...</code></p>
+        </div>
+        
+        <div class="test-area">
+            <h3 style="margin-bottom: 15px; color: #495057;">💬 Test Chat:</h3>
+            <input type="text" id="testInput" placeholder="Gõ câu hỏi test... (VD: 'SPF là gì?')" value="SPF là gì?">
+            <button id="testBtn" onclick="testChat()">🚀 Test Grok AI</button>
+            <button onclick="testQuick('alo')">Test: "alo"</button>
+            <button onclick="testQuick('40 tuổi nên làm gì?')">Test: "40 tuổi"</button>
+            
+            <div id="response" class="response" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        // Load AI_CONFIG inline để tránh lỗi path
+        const AI_CONFIG = {
+            apiKey: 'YOUR_GROK_API_KEY_HERE',
+            apiEndpoint: 'https://api.x.ai/v1/chat/completions',
+            model: 'grok-4-1-fast-non-reasoning', // RẺ NHẤT!
+            temperature: 0.7,
+            maxTokens: 200,
+            timeout: 30000,
+            useFallback: true,
+            systemPrompt: 'Bạn là tư vấn viên chuyên nghiệp của Thẩm Mỹ Viện Hương Mận. Trả lời NGẮN GỌN (2-4 câu), tự nhiên như chat Zalo, luôn kết thúc bằng câu hỏi để engage.'
+        };
+        
+        function isApiConfigured() {
+            return AI_CONFIG.apiKey && 
+                   AI_CONFIG.apiKey !== 'YOUR_GROK_API_KEY_HERE' && 
+                   AI_CONFIG.apiKey.length > 20;
+        }
+    </script>
+    <script>
+        // Display API info
+        window.addEventListener('DOMContentLoaded', () => {
+            const apiKeyDisplay = document.getElementById('apiKeyDisplay');
+            const modelDisplay = document.getElementById('modelDisplay');
+            const maxTokensDisplay = document.getElementById('maxTokensDisplay');
+            const temperatureDisplay = document.getElementById('temperatureDisplay');
+            const statusDiv = document.getElementById('status');
+            
+            if (typeof AI_CONFIG !== 'undefined') {
+                const maskedKey = AI_CONFIG.apiKey.substring(0, 20) + '...' + AI_CONFIG.apiKey.substring(AI_CONFIG.apiKey.length - 10);
+                apiKeyDisplay.textContent = maskedKey;
+                modelDisplay.textContent = AI_CONFIG.model;
+                maxTokensDisplay.textContent = AI_CONFIG.maxTokens;
+                temperatureDisplay.textContent = AI_CONFIG.temperature;
+                
+                if (isApiConfigured()) {
+                    statusDiv.className = 'status success';
+                    statusDiv.innerHTML = '✅ API Key hợp lệ! Sẵn sàng test.';
+                } else {
+                    statusDiv.className = 'status error';
+                    statusDiv.innerHTML = '❌ API Key chưa cấu hình hoặc không hợp lệ!';
+                }
+            } else {
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = '❌ Không tìm thấy AI_CONFIG! File ai-config.js chưa load.';
+            }
+        });
+        
+        async function testChat() {
+            const input = document.getElementById('testInput');
+            const testBtn = document.getElementById('testBtn');
+            const responseDiv = document.getElementById('response');
+            const message = input.value.trim();
+            
+            if (!message) {
+                alert('Vui lòng nhập câu hỏi!');
+                return;
+            }
+            
+            // Disable button
+            testBtn.disabled = true;
+            testBtn.innerHTML = '⏳ Đang test... <span class="loading"></span>';
+            
+            // Show response area
+            responseDiv.style.display = 'block';
+            responseDiv.innerHTML = '⏳ Đang gọi Grok API...\n\n';
+            
+            try {
+                const startTime = Date.now();
+                
+                responseDiv.innerHTML += `📤 Request:\n`;
+                responseDiv.innerHTML += `   User: "${message}"\n`;
+                responseDiv.innerHTML += `   Model: ${AI_CONFIG.model}\n`;
+                responseDiv.innerHTML += `   Max Tokens: ${AI_CONFIG.maxTokens}\n\n`;
+                
+                const response = await fetch(AI_CONFIG.apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${AI_CONFIG.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: AI_CONFIG.model,
+                        messages: [
+                            {
+                                role: 'system',
+                                content: AI_CONFIG.systemPrompt.substring(0, 500) + '...' // Shortened for display
+                            },
+                            {
+                                role: 'user',
+                                content: message
+                            }
+                        ],
+                        temperature: AI_CONFIG.temperature,
+                        max_tokens: AI_CONFIG.maxTokens
+                    })
+                });
+                
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+                
+                responseDiv.innerHTML += `⏱️ Response time: ${duration}ms\n\n`;
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`API Error ${response.status}: ${errorText}`);
+                }
+                
+                const data = await response.json();
+                const aiMessage = data.choices[0].message.content;
+                
+                responseDiv.innerHTML += `📥 Response:\n`;
+                responseDiv.innerHTML += `   Status: ✅ SUCCESS\n`;
+                responseDiv.innerHTML += `   Tokens used: ${data.usage?.total_tokens || 'N/A'}\n\n`;
+                responseDiv.innerHTML += `💬 AI Response:\n`;
+                responseDiv.innerHTML += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+                responseDiv.innerHTML += aiMessage + '\n';
+                responseDiv.innerHTML += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+                responseDiv.innerHTML += `✅ TEST THÀNH CÔNG! Grok AI hoạt động bình thường.\n`;
+                responseDiv.innerHTML += `\n📊 Chi tiết:\n`;
+                responseDiv.innerHTML += `   - Response ngắn: ${aiMessage.length < 300 ? '✅ Yes' : '⚠️ Hơi dài'} (${aiMessage.length} chars)\n`;
+                responseDiv.innerHTML += `   - Có câu hỏi cuối: ${aiMessage.includes('?') ? '✅ Yes' : '⚠️ No'}\n`;
+                responseDiv.innerHTML += `   - Tự nhiên: ${!aiMessage.includes('trợ lý AI') ? '✅ Yes' : '⚠️ Vẫn lộ AI'}\n`;
+                
+                // Re-enable button
+                testBtn.disabled = false;
+                testBtn.innerHTML = '🚀 Test Grok AI';
+                
+            } catch (error) {
+                responseDiv.innerHTML += `\n❌ ERROR:\n`;
+                responseDiv.innerHTML += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+                responseDiv.innerHTML += error.message + '\n';
+                responseDiv.innerHTML += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+                
+                if (error.message.includes('401')) {
+                    responseDiv.innerHTML += `💡 Giải pháp: API key sai hoặc expired.\n`;
+                    responseDiv.innerHTML += `   → Lấy key mới tại: https://console.x.ai/\n`;
+                } else if (error.message.includes('429')) {
+                    responseDiv.innerHTML += `💡 Giải pháp: Vượt rate limit.\n`;
+                    responseDiv.innerHTML += `   → Chờ 1 phút rồi thử lại.\n`;
+                } else if (error.message.includes('Failed to fetch')) {
+                    responseDiv.innerHTML += `💡 Giải pháp: Network error hoặc CORS.\n`;
+                    responseDiv.innerHTML += `   → Check internet connection.\n`;
+                    responseDiv.innerHTML += `   → Đảm bảo chạy qua server (không phải file://).\n`;
+                }
+                
+                // Re-enable button
+                testBtn.disabled = false;
+                testBtn.innerHTML = '🚀 Test Grok AI';
+            }
+        }
+        
+        function testQuick(message) {
+            document.getElementById('testInput').value = message;
+            testChat();
+        }
+        
+        // Allow Enter key
+        document.getElementById('testInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                testChat();
+            }
+        });
+    </script>
+</body>
+</html>

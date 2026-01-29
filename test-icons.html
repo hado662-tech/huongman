@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .icon-test {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .icon-test i {
+            margin-right: 10px;
+            color: #c41e3a;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-box">
+        <h1>🔍 Test FontAwesome Icons</h1>
+        
+        <div class="icon-test">
+            <i class="fas fa-chevron-down"></i> Chevron Down (Menu)
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-heart"></i> Heart Icon
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-user"></i> User Icon
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-phone"></i> Phone Icon
+        </div>
+        
+        <div class="icon-test">
+            <i class="fas fa-calendar-check"></i> Calendar Icon
+        </div>
+        
+        <div id="result" style="margin-top: 30px; padding: 20px; border-radius: 5px;"></div>
+    </div>
+    
+    <script>
+        // Check if FontAwesome loaded
+        window.addEventListener('load', function() {
+            const result = document.getElementById('result');
+            const iconElement = document.querySelector('.fa-chevron-down');
+            
+            if (iconElement) {
+                const styles = window.getComputedStyle(iconElement);
+                const fontFamily = styles.fontFamily;
+                
+                if (fontFamily.includes('Font Awesome')) {
+                    result.innerHTML = '<span class="success">✅ FontAwesome đã load thành công!</span><br>Font Family: ' + fontFamily;
+                    result.style.background = '#d4edda';
+                } else {
+                    result.innerHTML = '<span class="error">❌ FontAwesome CHƯA load!</span><br>Font Family: ' + fontFamily;
+                    result.style.background = '#f8d7da';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

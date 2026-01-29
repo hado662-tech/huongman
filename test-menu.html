@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mobile Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-menu {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        
+        .dropdown > a {
+            display: block;
+            padding: 15px;
+            background: #C41E3A;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .dropdown.active > a {
+            background: #8B0000;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            background: rgba(255, 244, 230, 0.5);
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #C41E3A;
+        }
+        
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        
+        .mega-menu-col {
+            margin-bottom: 20px;
+        }
+        
+        .mega-menu-col h4 {
+            color: #C41E3A;
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .mega-menu-col ul {
+            list-style: none;
+        }
+        
+        .mega-menu-col ul li {
+            border-bottom: 1px solid rgba(196, 30, 58, 0.15);
+            padding: 8px 0;
+        }
+        
+        .mega-menu-col ul li a {
+            color: #1a1a1a;
+            text-decoration: none;
+            display: block;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        
+        .mega-menu-col ul li a:hover {
+            color: #C41E3A;
+            background: rgba(196, 30, 58, 0.05);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-bottom: 20px;">🔍 Test Mobile Menu</h1>
+    
+    <div class="test-menu">
+        <div class="dropdown">
+            <a href="#" onclick="this.parentElement.classList.toggle('active'); return false;">
+                Phẫu Thuật Thẩm Mỹ ▼
+            </a>
+            <div class="dropdown-menu mega">
+                <div class="mega-menu-content">
+                    <div class="mega-menu-col">
+                        <h4>Phẫu Thuật Mắt</h4>
+                        <ul>
+                            <li><a href="#">Bấm Mí Mắt</a></li>
+                            <li><a href="#">Tạo Mí Mắt Đôi</a></li>
+                            <li><a href="#">Sửa Sụp Mi</a></li>
+                            <li><a href="#">Kéo Khóe Mắt</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                        <h4>Phẫu Thuật Mũi</h4>
+                        <ul>
+                            <li><a href="#">Nâng Mũi Tổng Hợp</a></li>
+                            <li><a href="#">Nâng Đầu Mũi</a></li>
+                            <li><a href="#">Sửa Mũi Hỏng</a></li>
+                            <li><a href="#">Thu Gọn Cánh Mũi</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                        <h4>Nâng Cơ Mặt</h4>
+                        <ul>
+                            <li><a href="#">Căng Da Mặt SMAS</a></li>
+                            <li><a href="#">Mini Facelift</a></li>
+                            <li><a href="#">Cấy Mỡ 5D</a></li>
+                            <li><a href="#">Nâng Cơ Chỉ Siêu Âm</a></li>
+                        </ul>
+                    </div>
+                    <div class="mega-menu-col">
+                        <h4>Phẫu Thuật Khác</h4>
+                        <ul>
+                            <li><a href="#">Phẫu Thuật Hàm</a></li>
+                            <li><a href="#">Thẩm Mỹ Vùng Kín</a></li>
+                            <li><a href="#">Hút Mỡ Bụng</a></li>
+                            <li><a href="#">Nâng Ngực</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 20px; background: white; border-radius: 10px;">
+        <h3>✅ Nếu bạn thấy text ở đây:</h3>
+        <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+            <li>✅ HTML structure là OK</li>
+            <li>✅ CSS basic đang hoạt động</li>
+            <li>❌ Vấn đề nằm ở CSS chính của website</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px;">❌ Nếu bạn KHÔNG thấy text:</h3>
+        <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+            <li>❌ Browser có vấn đề</li>
+            <li>❌ Encoding issue</li>
+            <li>❌ Font loading problem</li>
+        </ul>
+    </div>
+</body>
+</html>

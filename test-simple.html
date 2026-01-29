@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Toggle Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: #C41E3A;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu { list-style: none; }
+        .dropdown > a {
+            display: block;
+            padding: 15px 20px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .dropdown.active > a {
+            background: #ffe0e6;
+            color: #C41E3A;
+        }
+        .dropdown-menu {
+            display: none;
+            background: #fff9e6;
+            padding: 10px 20px;
+        }
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        .log {
+            background: #1e1e1e;
+            color: #0f0;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log div { margin-bottom: 5px; }
+        .instruction {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Super Simple Test</h1>
+            <p>Click để test toggle</p>
+        </div>
+        
+        <div class="instruction">
+            <strong>Test:</strong><br>
+            1. Click "Menu 1" → Mở<br>
+            2. Click lại → Đóng<br>
+            3. Xem logs bên dưới
+        </div>
+        
+        <ul class="menu">
+            <li class="dropdown">
+                <a href="#" onclick="return false;">Menu 1 ▼</a>
+                <div class="dropdown-menu">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">Menu 2 ▼</a>
+                <div class="dropdown-menu">
+                    <a href="#">Item A</a>
+                    <a href="#">Item B</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="log" id="log">
+            <div>🚀 Ready to test...</div>
+        </div>
+    </div>
+
+    <script>
+        const logDiv = document.getElementById('log');
+        
+        function log(msg) {
+            const div = document.createElement('div');
+            div.textContent = msg;
+            logDiv.appendChild(div);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(msg);
+        }
+        
+        log('🔧 Initializing...');
+        
+        const dropdowns = document.querySelectorAll('.dropdown');
+        log('✅ Found ' + dropdowns.length + ' dropdowns');
+        
+        dropdowns.forEach((dropdown, index) => {
+            const link = dropdown.querySelector('a');
+            
+            log('Setting up: ' + link.textContent);
+            
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                log('🖱️ CLICKED: ' + this.textContent);
+                
+                const wasActive = dropdown.classList.contains('active');
+                log('Was active: ' + wasActive);
+                
+                // Close all
+                dropdowns.forEach(d => {
+                    d.classList.remove('active');
+                });
+                
+                // Toggle current
+                if (!wasActive) {
+                    dropdown.classList.add('active');
+                    log('✅ OPENED');
+                } else {
+                    log('✅ CLOSED');
+                }
+            });
+        });
+        
+        log('✅ All set up!');
+    </script>
+</body>
+</html>

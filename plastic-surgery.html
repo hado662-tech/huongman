@@ -1,0 +1,675 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phẫu Thuật Thẩm Mỹ - Thẩm Mỹ Viện Hương Mận</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;500;600;700&family=Parisienne&family=Poppins:wght@300;400;500;600;700;800&family=Alex+Brush&family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sections-styles.css">
+    <link rel="stylesheet" href="css/surgery-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>Hương Mận</h1>
+                    <p>Thẩm Mỹ Viện</p>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li class="dropdown">
+                            <a href="index.html#about">Giới Thiệu <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html#about">Về Hương Mận</a></li>
+                                <li><a href="index.html#doctors">Đội Ngũ Bác Sĩ</a></li>
+                                <li><a href="index.html#facilities">Cơ Sở Vật Chất</a></li>
+                                <li><a href="index.html#testimonials">Khách Hàng Nói Gì</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active">
+                            <a href="plastic-surgery.html">Phẫu Thuật Thẩm Mỹ <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#eyes">Phẫu Thuật Mắt</a></li>
+                                <li><a href="#nose">Phẫu Thuật Mũi</a></li>
+                                <li><a href="#facelift">Nâng Cơ Mặt</a></li>
+                                <li><a href="#other">Phẫu Thuật Khác</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#services">Khoa Da</a></li>
+                        <li><a href="products.html">Sản Phẩm</a></li>
+                        <li><a href="index.html#promotions">Khuyến Mãi</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Phẫu Thuật Thẩm Mỹ</h1>
+                <p>Định Hình Vẻ Đẹp Hoàn Hảo Của Bạn</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-certificate"></i>
+                        <span>Bác Sĩ Chuyên Môn Cao</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-shield-check"></i>
+                        <span>An Toàn Tuyệt Đối</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-heart-pulse"></i>
+                        <span>Chăm Sóc Tận Tâm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="surgery-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>Vì Sao Chọn Hương Mận?</h2>
+                <p><strong>Thẩm Mỹ Viện Hương Mận</strong> tự hào là đơn vị tiên phong trong lĩnh vực phẫu thuật thẩm mỹ tại Việt Nam, với hơn <strong>15 năm kinh nghiệm</strong> và <strong>10,000+ ca phẫu thuật thành công</strong>.</p>
+                
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <div class="intro-icon">
+                            <i class="fas fa-user-doctor"></i>
+                        </div>
+                        <h3>Bác Sĩ Đẳng Cấp</h3>
+                        <p>Đội ngũ bác sĩ có bằng CK1, CK2, với chứng chỉ quốc tế từ Hàn Quốc, Nhật Bản, Mỹ</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <div class="intro-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Công Nghệ Hàng Đầu</h3>
+                        <p>Trang thiết bị phẫu thuật hiện đại nhất, nhập khẩu 100% từ nước ngoài</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <div class="intro-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3>Phòng Mổ Chuẩn Quốc Tế</h3>
+                        <p>Tiêu chuẩn vô trùng tuyệt đối, hệ thống hồi sức chuyên nghiệp</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <div class="intro-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Cam Kết Bảo Hành</h3>
+                        <p>Bảo hành dài hạn, chăm sóc hậu phẫu trọn đời, hỗ trợ 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eye Surgery Section -->
+    <section class="surgery-category" id="eyes">
+        <div class="container">
+            <div class="category-header">
+                <h2>Phẫu Thuật Mắt</h2>
+                <p>Đôi Mắt Sắc Sảo - Tự Tin Tỏa Sáng</p>
+            </div>
+            <div class="surgery-grid">
+                <a href="surgery/bam-mi-mat.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/bam-mi.jpg" alt="Bấm Mi Mắt" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Bấm Mi Mắt</h3>
+                        <p>Tạo nếp mí tự nhiên, không để lại scar</p>
+                        <ul>
+                            <li>✓ Không phẫu thuật</li>
+                            <li>✓ Hồi phục nhanh 3-5 ngày</li>
+                            <li>✓ Giá: 8.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/tao-mi-mat-doi.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/mi-doi.jpg" alt="Tạo Mi Mắt Đôi" onerror="this.src='https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Tạo Mi Mắt Đôi</h3>
+                        <p>Phẫu thuật tạo mí đôi vĩnh viễn, tự nhiên</p>
+                        <ul>
+                            <li>✓ Kỹ thuật Hàn Quốc</li>
+                            <li>✓ Hồi phục 7-10 ngày</li>
+                            <li>✓ Giá: 15.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/sua-sup-mi.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/sup-mi.jpg" alt="Sửa Sụp Mi" onerror="this.src='https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Sửa Sụp Mi</h3>
+                        <p>Khắc phục sụp mi bẩm sinh hoặc do tuổi tác</p>
+                        <ul>
+                            <li>✓ Cải thiện tầm nhìn</li>
+                            <li>✓ Mắt sáng, trẻ trung</li>
+                            <li>✓ Giá: 18.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/keo-khoe-mat.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/keo-khoe.jpg" alt="Kéo Khóe Mắt" onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Kéo Khóe Mắt</h3>
+                        <p>Mở rộng mắt, tạo đôi mắt to tròn quyến rũ</p>
+                        <ul>
+                            <li>✓ Mắt to hơn 20-30%</li>
+                            <li>✓ Tự nhiên, không căng</li>
+                            <li>✓ Giá: 20.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nose Surgery Section -->
+    <section class="surgery-category alt-bg" id="nose">
+        <div class="container">
+            <div class="category-header">
+                <h2>Phẫu Thuật Mũi</h2>
+                <p>Chiếc Mũi Hoàn Hảo - Khuôn Mặt Hài Hòa</p>
+            </div>
+            <div class="surgery-grid">
+                <a href="surgery/nang-mui-tong-hop.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/nang-mui.jpg" alt="Nâng Mũi Tổng Hợp" onerror="this.src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-head-side-mask"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Nâng Mũi Tổng Hợp</h3>
+                        <p>Sụn tự thân + sụn nhân tạo, dáng mũi hoàn hảo</p>
+                        <ul>
+                            <li>✓ Sụn tự thân an toàn</li>
+                            <li>✓ Dáng mũi S-Line Hàn Quốc</li>
+                            <li>✓ Giá: 45.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/nang-dau-mui.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/dau-mui.jpg" alt="Nâng Đầu Mũi" onerror="this.src='https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-head-side-mask"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Nâng Đầu Mũi</h3>
+                        <p>Chỉnh sửa đầu mũi tròn, hếch, ngắn</p>
+                        <ul>
+                            <li>✓ Dùng sụn vành tai/sụn sườn</li>
+                            <li>✓ Đầu mũi thanh tú</li>
+                            <li>✓ Giá: 25.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/sua-mui-hong.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/sua-mui.jpg" alt="Sửa Mũi Hỏng" onerror="this.src='https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-head-side-mask"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Sửa Mũi Hỏng</h3>
+                        <p>Khắc phục biến chứng nâng mũi thất bại</p>
+                        <ul>
+                            <li>✓ Xử lý nhiễm trùng, lệch sụn</li>
+                            <li>✓ Tái tạo dáng mũi đẹp</li>
+                            <li>✓ Giá: 60.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/thu-gon-canh-mui.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/canh-mui.jpg" alt="Thu Gọn Cánh Mũi" onerror="this.src='https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-head-side-mask"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Thu Gọn Cánh Mũi</h3>
+                        <p>Khắc phục cánh mũi to, xẹp, hở</p>
+                        <ul>
+                            <li>✓ Cánh mũi nhỏ gọn, cân đối</li>
+                            <li>✓ Không để lại scar rõ</li>
+                            <li>✓ Giá: 15.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facelift Section -->
+    <section class="surgery-category" id="facelift">
+        <div class="container">
+            <div class="category-header">
+                <h2>Nâng Cơ Mặt</h2>
+                <p>Trẻ Hóa Khuôn Mặt - Xóa Tan Dấu Vết Thời Gian</p>
+            </div>
+            <div class="surgery-grid">
+                <a href="surgery/cang-da-mat-smas.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/smas.jpg" alt="Căng Da Mặt SMAS" onerror="this.src='https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-face-smile"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Căng Da Mặt SMAS</h3>
+                        <p>Phẫu thuật căng da mặt toàn diện, lâu dài</p>
+                        <ul>
+                            <li>✓ Căng cơ SMAS sâu</li>
+                            <li>✓ Hiệu quả 10-15 năm</li>
+                            <li>✓ Giá: 80.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/mini-facelift.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/mini-facelift.jpg" alt="Mini Facelift" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-face-smile"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Mini Facelift</h3>
+                        <p>Căng da mặt nhẹ, phục hồi nhanh</p>
+                        <ul>
+                            <li>✓ Ít xâm lấn</li>
+                            <li>✓ Hồi phục 7-10 ngày</li>
+                            <li>✓ Giá: 50.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/cay-mo-5d.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/cay-mo.jpg" alt="Cấy Mỡ 5D" onerror="this.src='https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-face-smile"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Cấy Mỡ 5D</h3>
+                        <p>Lấp đầy, trẻ hóa bằng mỡ tự thân</p>
+                        <ul>
+                            <li>✓ 100% tự thân, an toàn</li>
+                            <li>✓ Lâu dài, tự nhiên</li>
+                            <li>✓ Giá: 35.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/nang-co-sieu-am.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/sieu-am.jpg" alt="Nâng Cơ Chi Siêu Âm" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-face-smile"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Nâng Cơ Chi Siêu Âm</h3>
+                        <p>Căng da bằng chỉ sinh học, không phẫu thuật</p>
+                        <ul>
+                            <li>✓ Không đau, không dao kéo</li>
+                            <li>✓ Hiệu quả 1-2 năm</li>
+                            <li>✓ Giá: 25.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Surgery Section -->
+    <section class="surgery-category alt-bg" id="other">
+        <div class="container">
+            <div class="category-header">
+                <h2>Phẫu Thuật Khác</h2>
+                <p>Định Hình Đường Nét - Tạo Nên Sự Khác Biệt</p>
+            </div>
+            <div class="surgery-grid">
+                <a href="surgery/phau-thuat-ham.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/ham.jpg" alt="Phẫu Thuật Hàm" onerror="this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Phẫu Thuật Hàm</h3>
+                        <p>Chỉnh hàm hô, móm, lệch để cân đối khuôn mặt</p>
+                        <ul>
+                            <li>✓ Phẫu thuật chỉnh hình hàm mặt</li>
+                            <li>✓ Cải thiện cắn khớp</li>
+                            <li>✓ Giá: 100.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/got-xuong-ma.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/got-xuong.jpg" alt="Gọt Xương Má" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Gọt Xương Má</h3>
+                        <p>Gọt má cao để có gương mặt thon gọn</p>
+                        <ul>
+                            <li>✓ Má thon, thanh tú</li>
+                            <li>✓ An toàn, ít biến chứng</li>
+                            <li>✓ Giá: 70.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/tao-ma-vline.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/vline.jpg" alt="Tạo Má V-Line" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Tạo Má V-Line</h3>
+                        <p>Gọt hàm tạo khuôn mặt chữ V hoàn hảo</p>
+                        <ul>
+                            <li>✓ Gọt 3 điểm (má, hàm, cằm)</li>
+                            <li>✓ V-line Hàn Quốc</li>
+                            <li>✓ Giá: 120.000.000đ</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="surgery/hut-mo-co-the.html" class="surgery-card">
+                    <div class="surgery-image">
+                        <img src="images/surgery/hut-mo.jpg" alt="Hút Mỡ Cơ Thể" onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop'">
+                        <div class="surgery-overlay">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                    </div>
+                    <div class="surgery-info">
+                        <h3>Hút Mỡ Cơ Thể</h3>
+                        <p>Loại bỏ mỡ thừa, tạo đường cong cơ thể</p>
+                        <ul>
+                            <li>✓ Hút mỡ bụng, đùi, tay...</li>
+                            <li>✓ Công nghệ Vaser Lipo</li>
+                            <li>✓ Giá: 30.000.000đ/vùng</li>
+                        </ul>
+                        <span class="view-more">Xem Chi Tiết <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="surgery-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quy Trình Phẫu Thuật Tại Hương Mận</h2>
+                <p>5 Bước Đảm Bảo An Toàn & Hiệu Quả</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Tư Vấn & Khám</h3>
+                        <p>Bác sĩ thăm khám, tư vấn phương án phù hợp, chụp 3D mô phỏng kết quả</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Xét Nghiệm</h3>
+                        <p>Xét nghiệm máu, đánh giá sức khỏe tổng quát, đảm bảo đủ điều kiện phẫu thuật</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Phẫu Thuật</h3>
+                        <p>Thực hiện phẫu thuật trong phòng mổ chuẩn quốc tế, bác sĩ giàu kinh nghiệm</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Hồi Sức</h3>
+                        <p>Theo dõi sau phẫu thuật tại phòng hồi sức, chăm sóc chu đáo</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Tái Khám</h3>
+                        <p>Tái khám định kỳ, hỗ trợ 24/7, bảo hành dài hạn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="surgery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Sẵn Sàng Thay Đổi?</h2>
+                <p>Đặt lịch tư vấn miễn phí với bác sĩ chuyên môn cao ngay hôm nay!</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="openBooking()">
+                        <i class="fas fa-calendar-check"></i> Đặt Lịch Ngay
+                    </button>
+                    <a href="tel:0383119119" class="btn-secondary">
+                        <i class="fas fa-phone"></i> Hotline: 0383 119 119
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Thẩm Mỹ Viện Hương Mận</h3>
+                    <p>Địa chỉ làm đẹp uy tín, chất lượng hàng đầu Việt Nam</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <p>📍 123 Đường ABC, Quận 1, TP.HCM</p>
+                    <p>📞 Hotline: 0383 119 119</p>
+                    <p>✉️ Email: info@huongman.vn</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Giờ Làm Việc</h4>
+                    <p>Thứ 2 - Thứ 7: 8:00 - 20:00</p>
+                    <p>Chủ Nhật: 8:00 - 17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thẩm Mỹ Viện Hương Mận. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom Navigation (Mobile) -->
+    <nav class="sticky-bottom-nav">
+        <div class="bottom-nav-container">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Trang chủ</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Sản phẩm</span>
+            </a>
+            <a href="tel:0383119119" class="nav-item hotline-btn">
+                <i class="fas fa-phone-alt"></i>
+                <span>Hotline</span>
+            </a>
+            <a href="https://zalo.me/0123456789" target="_blank" class="nav-item">
+                <i class="fas fa-comment-dots"></i>
+                <span>Zalo</span>
+            </a>
+            <a href="#" class="nav-item" onclick="toggleMobileMenu(); return false;">
+                <i class="fas fa-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Floating Contact Bar -->
+    <div class="floating-contact">
+        <a href="tel:0383119119" class="contact-btn hotline">
+            <i class="fas fa-phone-alt"></i>
+            <span class="tooltip">Hotline: 0383 119 119</span>
+        </a>
+        <a href="https://zalo.me/0123456789" target="_blank" class="contact-btn zalo">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="tooltip">Chat Zalo</span>
+        </a>
+        <a href="https://m.me/huongmanclinic" target="_blank" class="contact-btn messenger">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="tooltip">Chat Messenger</span>
+        </a>
+        <a href="https://maps.google.com/?q=123+Nguyễn+Huệ+Q1+TPHCM" target="_blank" class="contact-btn map">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="tooltip">Xem bản đồ</span>
+        </a>
+    </div>
+
+    <!-- Chat Bubble - Nút tròn floating -->
+    <div class="chat-bubble" id="chatBubble">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <div class="chat-header-info">
+                <i class="fas fa-headset"></i>
+                <span>Hỗ Trợ Khách Hàng</span>
+            </div>
+            <button class="chat-close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <p>Xin chào! Tôi có thể tư vấn gì cho bạn về phẫu thuật thẩm mỹ? 😊</p>
+                </div>
+            </div>
+            <div class="chat-input-wrapper">
+                <input type="text" id="chatInput" placeholder="Nhập tin nhắn...">
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Đặt Lịch Tư Vấn</h2>
+            <form id="bookingForm">
+                <input type="text" placeholder="Họ và tên *" required>
+                <input type="tel" placeholder="Số điện thoại *" required>
+                <input type="email" placeholder="Email">
+                <select required>
+                    <option value="">Chọn dịch vụ *</option>
+                    <option value="eyes">Phẫu Thuật Mắt</option>
+                    <option value="nose">Phẫu Thuật Mũi</option>
+                    <option value="facelift">Nâng Cơ Mặt</option>
+                    <option value="other">Phẫu Thuật Khác</option>
+                </select>
+                <textarea placeholder="Ghi chú" rows="3"></textarea>
+                <button type="submit" class="btn-submit">Xác Nhận Đặt Lịch</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/ai-config.js?v=20260128-5"></script>
+    <script src="js/main.js?v=20260128-5"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 DEMO - Thẩm Mỹ Viện Hương Mận (Có Ảnh)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .banner {
+            text-align: center;
+            background: linear-gradient(135deg, #d4a574, #8b6f47);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .hero {
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1920&h=600&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background: #d4a574;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #8b6f47;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c2c2c;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            color: #d4a574;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .about {
+            background: #f5e6d3;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border: 2px solid #d4a574;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .note h3 {
+            color: #d4a574;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        🎉 DEMO - Website Đã Có Ảnh! Xem bên dưới 👇
+    </div>
+
+    <!-- Hero Section với ảnh background -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Thẩm Mỹ Viện Hương Mận</h1>
+            <p>Mỗi Ngày, Mỗi Khoảnh Khắc - Nâng Tầm Vẻ Đẹp Của Bạn</p>
+            <a href="index.html" class="btn">Vào Website Chính</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Về Chúng Tôi</h2>
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop" alt="Clinic" class="about-image">
+                <div class="about-text">
+                    <p><strong>Hương Mận</strong> là thẩm mỹ viện uy tín hàng đầu, tập hợp đội ngũ chuyên gia trong nhiều lĩnh vực khác nhau, tận tâm xây dựng mối quan hệ giá trị với khách hàng.</p>
+                    <br>
+                    <p>Chúng tôi kiên trì nguyên tắc <strong>điều trị trung thực</strong> và tôn trọng sự đa dạng cá nhân để đảm bảo chăm sóc hoàn hảo.</p>
+                    <br>
+                    <p>✨ Công nghệ hiện đại nhất<br>
+                    👨‍⚕️ Đội ngũ bác sĩ giàu kinh nghiệm<br>
+                    🏆 Hơn 10 năm uy tín</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        
+        <div class="note">
+            <h3>✅ Ảnh Đã Được Thêm Tự Động!</h3>
+            <p>Website hiện đang dùng ảnh từ Unsplash.com (ảnh online)<br>
+            Bạn có thể thấy 6 sản phẩm bên dưới đều có ảnh đẹp rồi!</p>
+        </div>
+        
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop" alt="Serum" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Serum Vitamin C Cao Cấp</h3>
+                    <p>Làm sáng da, mờ thâm nám và chống lão hóa</p>
+                    <div class="product-price">850.000đ</div>
+                    <button class="btn">Thêm Vào Giỏ</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop" alt="Sunscreen" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Kem Chống Nắng SPF 50+</h3>
+                    <p>Bảo vệ da khỏi tia UV, không gây nhờn rít</p>
+                    <div class="product-price">550.000đ</div>
+                    <button class="btn">Thêm Vào Giỏ</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=500&fit=crop" alt="Cleanser" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Sữa Rửa Mặt Dịu Nhẹ</h3>
+                    <p>Làm sạch sâu, giữ ẩm cho da nhạy cảm</p>
+                    <div class="product-price">350.000đ</div>
+                    <button class="btn">Thêm Vào Giỏ</button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&h=500&fit=crop" alt="Cream" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Kem Dưỡng Ẩm Ban Đêm</h3>
+                    <p>Phục hồi và nuôi dưỡng da khi bạn ngủ</p>
+                    <div class="product-price">950.000đ</div>
+                    <button class="btn">Thêm Vào Giỏ</button>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&h=500&fit=crop" alt="Mask" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Mặt Nạ Collagen</h3>
+                    <p>Cấp ẩm sâu, tăng độ đàn hồi cho da</p>
+                    <div class="product-price">450.000đ</div>
+                    <button class="btn">Thêm Vào Giỏ</button>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop" alt="Hyaluronic" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Serum Hyaluronic Acid</h3>
+                    <p>Cấp nước tức thì, làm mềm mịn da</p>
+                    <div class="product-price">750.000đ</div>
+                    <button class="btn">Thêm Vào Giỏ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions -->
+    <section class="container">
+        <div class="note">
+            <h3>🚀 Làm Thế Nào Để Có Ảnh?</h3>
+            <p><strong>Cực kỳ đơn giản!</strong> Website chính (index.html) đã được cập nhật với ảnh online.</p>
+            <p>✅ 6 sản phẩm đã có ảnh từ Unsplash<br>
+            ✅ Code tự động load ảnh<br>
+            ✅ Nếu ảnh lỗi, emoji vẫn hiển thị</p>
+            <br>
+            <p><strong>Chỉ cần:</strong></p>
+            <p>1️⃣ Mở file <code>index.html</code><br>
+            2️⃣ Refresh trang (F5)<br>
+            3️⃣ XONG! Ảnh đã có rồi! 🎉</p>
+            <br>
+            <a href="index.html" class="btn">Vào Website Chính Xem Ngay</a>
+        </div>
+    </section>
+
+    <div style="background: #2c2c2c; color: white; text-align: center; padding: 40px;">
+        <h3>✨ Website Đã Sẵn Sàng! ✨</h3>
+        <p style="margin: 20px 0;">Tất cả ảnh đã được tích hợp vào website chính</p>
+        <a href="index.html" class="btn">Mở Website Chính</a>
+    </div>
+</body>
+</html>
