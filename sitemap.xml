@@ -24,6 +24,83 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Blog & SEO Articles -->
+  <url>
+    <loc>https://thammyhuongman.com/blog.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tham-my-huong-man-o-dau.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tham-my-huong-man-co-tot-khong.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/review-tham-my-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/vi-sao-nen-chon-tham-my-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/quy-trinh-tu-van-tai-tham-my-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tieu-chi-an-toan-tai-tham-my-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/dich-vu-noi-bat-cua-tham-my-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/ai-nen-tu-van-truoc-khi-lam-dep-tai-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/cham-soc-sau-lieu-trinh-tai-tham-my-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/kinh-nghiem-chon-tham-my-vien-uy-tin-va-huong-man.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Surgery Services -->
   <url>
