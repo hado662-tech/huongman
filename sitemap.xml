@@ -242,6 +242,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/nang-mui-thai-nguyen-co-dau-khong-bao-lau-thi-dep.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/cat-mi-thai-nguyen-bao-lau-thi-dep-can-kieng-gi.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tri-nam-thai-nguyen-co-het-han-khong-nen-lam-gi.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tri-mun-thai-nguyen-co-nen-nan-mun-khong-quy-trinh.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/cang-da-mat-thai-nguyen-co-an-toan-khong-ai-nen-lam.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/giam-mo-bung-thai-nguyen-co-hieu-qua-khong-phu-hop-ai.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Surgery Services -->
   <url>
