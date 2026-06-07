@@ -158,6 +158,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/nang-mui-thai-nguyen-gia-bao-nhieu-va-can-chuan-bi-gi.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/cat-mi-thai-nguyen-co-dau-khong-cach-hoi-phuc.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tri-nam-thai-nguyen-bao-lau-thi-thay-ro.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tri-mun-thai-nguyen-sau-lieu-trinh-nen-an-gi.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/cham-soc-sau-nang-mui-thai-nguyen-luu-y-quan-trong.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/dat-lich-tu-van-tham-my-huong-man-thai-nguyen.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Surgery Services -->
   <url>
