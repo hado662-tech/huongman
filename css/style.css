@@ -26,6 +26,25 @@
     --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
     --gradient-luxury: linear-gradient(135deg, #C41E3A 0%, #FFD700 50%, #C41E3A 100%);
     --gradient-hero: linear-gradient(135deg, rgba(196, 30, 58, 0.9) 0%, rgba(255, 215, 0, 0.8) 100%);
+
+    /* Unified theme tokens */
+    --brand-red: #B5122B;
+    --brand-red-dark: #7E0718;
+    --brand-gold: #D7A64A;
+    --brand-gold-soft: #FFF5E3;
+    --brand-ivory: #FFF9F0;
+    --brand-ink: #241414;
+    --brand-muted: #6B5752;
+    --brand-border: rgba(181, 18, 43, 0.14);
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --shadow-soft: 0 14px 40px rgba(126, 7, 24, 0.10);
+    --shadow-lift: 0 22px 58px rgba(126, 7, 24, 0.16);
+    --section-warm: linear-gradient(180deg, var(--brand-ivory) 0%, #ffffff 62%);
+    --theme-gradient-primary: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);
+    --theme-gradient-gold: linear-gradient(135deg, var(--brand-gold) 0%, #F2D279 100%);
+    --theme-gradient-hero: linear-gradient(135deg, rgba(126, 7, 24, 0.94) 0%, rgba(181, 18, 43, 0.90) 52%, rgba(215, 166, 74, 0.82) 100%);
 }
 
 body {
@@ -3118,6 +3137,264 @@ section {
     line-height: 1.8;
     margin-bottom: 8px;
     padding-left: 5px;
+}
+
+/* ===== UNIFIED LUXURY THEME POLISH ===== */
+body {
+    background: var(--brand-ivory);
+    color: var(--brand-ink);
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    letter-spacing: 0;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--brand-border);
+    box-shadow: 0 10px 34px rgba(126, 7, 24, 0.08);
+    backdrop-filter: blur(14px);
+}
+
+.logo h1 {
+    background: linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 48%, var(--brand-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.logo p {
+    color: var(--brand-red-dark);
+    letter-spacing: 0;
+}
+
+.nav-menu a {
+    color: var(--brand-ink);
+}
+
+.nav-menu,
+.nav-menu > ul {
+    gap: clamp(16px, 2vw, 28px);
+}
+
+.nav-menu a {
+    font-size: 15px;
+}
+
+.nav-actions {
+    gap: 10px;
+}
+
+.btn-book {
+    padding: 11px 16px;
+    min-width: 122px;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--brand-red);
+}
+
+.dropdown-menu,
+.dropdown-menu.mega {
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lift);
+}
+
+.hero {
+    background: var(--theme-gradient-hero);
+}
+
+.hero::after {
+    background:
+        radial-gradient(circle at 18% 35%, rgba(215, 166, 74, 0.22) 0%, transparent 34%),
+        radial-gradient(circle at 82% 50%, rgba(255, 255, 255, 0.10) 0%, transparent 32%);
+}
+
+.hero-overlay {
+    background: linear-gradient(135deg, rgba(126, 7, 24, 0.84), rgba(181, 18, 43, 0.64));
+    backdrop-filter: none;
+}
+
+.hero-title,
+.hero-subtitle {
+    letter-spacing: 0;
+}
+
+.hero-subtitle {
+    color: #F4D77B;
+}
+
+.btn-hero::before {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.page-header {
+    background:
+        linear-gradient(135deg, rgba(126, 7, 24, 0.92), rgba(181, 18, 43, 0.84)),
+        url('../images/hero-bg.jpg') center/cover;
+    color: #fff;
+}
+
+.page-header h1,
+.section-header h2,
+.intro-content h2,
+.category-header h2,
+.overview-content h1 {
+    background: linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 45%, var(--brand-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.page-header h1 {
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+}
+
+.page-header p,
+.section-header p,
+.category-header p,
+.intro-content > p,
+.overview-content > p {
+    color: var(--brand-muted);
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.about,
+.services,
+.products-section,
+.doctors,
+.facilities,
+.testimonials,
+.promotions,
+.contact,
+.surgery-intro,
+.surgery-category.alt-bg,
+.benefits-section,
+.price-section,
+.faq-section,
+.related-services {
+    background: var(--section-warm);
+}
+
+.service-card,
+.product-card,
+.doctor-card,
+.facility-card,
+.testimonial-card,
+.promo-card,
+.intro-card,
+.surgery-card,
+.benefit-card,
+.gallery-item,
+.stat-box,
+.stat-item,
+.price-table,
+.related-card,
+.faq-item,
+.modal-content,
+.chat-widget {
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+}
+
+.service-card:hover,
+.product-card:hover,
+.doctor-card:hover,
+.facility-card:hover,
+.testimonial-card:hover,
+.promo-card:hover,
+.intro-card:hover,
+.surgery-card:hover,
+.benefit-card:hover,
+.related-card:hover {
+    box-shadow: var(--shadow-lift);
+}
+
+.btn-hero,
+.btn-service,
+.btn-add-cart,
+.btn-promo,
+.btn-book,
+.filter-btn.active,
+.btn-cta-primary,
+.btn-primary {
+    border-radius: var(--radius-md);
+    background: var(--theme-gradient-primary);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(181, 18, 43, 0.22);
+}
+
+.btn-hero:hover,
+.btn-service:hover,
+.btn-add-cart:hover,
+.btn-promo:hover,
+.btn-book:hover,
+.btn-cta-primary:hover,
+.btn-primary:hover {
+    color: #fff;
+}
+
+.btn-hero.secondary,
+.btn-secondary,
+.btn-cta-secondary,
+.filter-btn {
+    border-radius: var(--radius-md);
+}
+
+.service-icon,
+.intro-icon,
+.benefit-icon,
+.facility-icon,
+.stat-box i {
+    background: var(--theme-gradient-primary);
+    box-shadow: 0 10px 24px rgba(181, 18, 43, 0.20);
+}
+
+.mobile-toggle span,
+.cart-count,
+.chat-bubble {
+    background: var(--theme-gradient-primary);
+}
+
+@media (max-width: 768px) {
+    .service-card,
+    .product-card,
+    .doctor-card,
+    .facility-card,
+    .testimonial-card,
+    .promo-card,
+    .intro-card,
+    .surgery-card,
+    .benefit-card {
+        border-radius: var(--radius-md);
+    }
+}
+
+@media (min-width: 969px) and (max-width: 1400px) {
+    .nav-wrapper {
+        gap: 22px;
+    }
+
+    .nav-menu,
+    .nav-menu > ul {
+        gap: clamp(12px, 1.4vw, 22px);
+    }
+
+    .btn-book {
+        display: none;
+    }
 }
 
 /* Responsive adjustments for doctor cards */

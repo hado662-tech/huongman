@@ -429,6 +429,71 @@
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
+/* Unified theme polish for surgery listing pages */
+.page-hero {
+    background:
+        var(--theme-gradient-hero),
+        url('../images/hero-bg.jpg') center/cover;
+}
+
+.hero-overlay {
+    background: linear-gradient(180deg, rgba(36, 20, 20, 0.12), rgba(36, 20, 20, 0.34));
+}
+
+.surgery-intro,
+.surgery-category.alt-bg,
+.process-section,
+.surgery-cta {
+    background: var(--section-warm);
+}
+
+.intro-card,
+.surgery-card,
+.process-step,
+.step-content {
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+}
+
+.intro-card:hover,
+.surgery-card:hover {
+    box-shadow: var(--shadow-lift);
+}
+
+.intro-content h2,
+.category-header h2,
+.surgery-info h3 {
+    background: linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 48%, var(--brand-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.intro-icon,
+.step-number {
+    background: var(--theme-gradient-primary);
+    box-shadow: 0 12px 28px rgba(181, 18, 43, 0.22);
+}
+
+.surgery-overlay {
+    background: linear-gradient(135deg, rgba(126, 7, 24, 0.72), rgba(215, 166, 74, 0.62));
+}
+
+.intro-content > p,
+.category-header p,
+.intro-card p,
+.surgery-info > p,
+.surgery-info ul li,
+.step-content p {
+    color: var(--brand-muted);
+}
+
+.btn-primary,
+.btn-secondary {
+    border-radius: var(--radius-md);
+}
+
 /* Responsive */
 @media (max-width: 968px) {
     .page-hero h1 {

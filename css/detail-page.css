@@ -536,6 +536,74 @@
     color: var(--primary-color);
 }
 
+/* Unified theme polish for detail pages */
+.breadcrumb {
+    background: var(--brand-ivory);
+    border-bottom: 1px solid var(--brand-border);
+}
+
+.service-overview,
+.gallery-section {
+    background: #fff;
+}
+
+.benefits-section,
+.price-section,
+.faq-section,
+.related-services {
+    background: var(--section-warm);
+}
+
+.overview-image,
+.stat-box,
+.benefit-card,
+.gallery-item,
+.price-table,
+.faq-item,
+.related-card {
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+}
+
+.benefit-card:hover,
+.related-card:hover {
+    box-shadow: var(--shadow-lift);
+}
+
+.overview-content h1,
+.benefit-card h3,
+.related-card h3 {
+    color: var(--brand-red);
+}
+
+.overview-content h1 {
+    background: linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 48%, var(--brand-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.benefit-icon,
+.price-header,
+.btn-cta-primary {
+    background: var(--theme-gradient-primary) !important;
+}
+
+.overview-content .subtitle,
+.overview-content > p,
+.benefit-card p,
+.faq-answer,
+.related-card p,
+.stat-box .stat-label {
+    color: var(--brand-muted);
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+    border-radius: var(--radius-md);
+}
+
 /* Responsive */
 @media (max-width: 968px) {
     .overview-grid {

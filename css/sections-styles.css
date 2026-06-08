@@ -283,6 +283,61 @@
     box-shadow: 0 15px 40px rgba(196, 30, 58, 0.5);
 }
 
+/* Unified theme polish for shared homepage sections */
+.doctors,
+.facilities,
+.testimonial-cta,
+.stat-item,
+.facility-card {
+    background: var(--section-warm);
+}
+
+.doctor-card,
+.facility-card,
+.stat-item,
+.testimonial-cta {
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.doctor-card:hover,
+.facility-card:hover {
+    box-shadow: var(--shadow-lift);
+}
+
+.doctor-info h3,
+.stat-item h3 {
+    background: linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 48%, var(--brand-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.facility-icon,
+.btn-testimonial {
+    background: var(--theme-gradient-primary);
+    box-shadow: 0 12px 28px rgba(181, 18, 43, 0.22);
+}
+
+.facility-card h3,
+.testimonial-header h4 {
+    color: var(--brand-red);
+}
+
+.doctor-title,
+.doctor-credentials li,
+.facilities-intro p,
+.facility-card ul li,
+.stat-item p,
+.testimonial-header span,
+.testimonial-service {
+    color: var(--brand-muted);
+}
+
+.btn-testimonial {
+    border-radius: var(--radius-md);
+}
+
 /* ===== RESPONSIVE - MOBILE ===== */
 @media (max-width: 768px) {
     .doctors-grid,
