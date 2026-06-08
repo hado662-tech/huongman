@@ -3057,6 +3057,7 @@ section {
     /* Larger touch targets */
     .nav-menu a,
     .btn-cart,
+    .cart-btn,
     .btn-book,
     button {
         min-height: 44px;
@@ -3186,6 +3187,34 @@ textarea {
 
 .nav-actions {
     gap: 10px;
+}
+
+.btn-cart,
+.cart-btn {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-ink);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cart-count {
+    top: 2px;
+    right: 2px;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1;
+    border: 2px solid #fff;
 }
 
 .btn-book {
@@ -3353,6 +3382,44 @@ textarea {
     border-radius: var(--radius-md);
 }
 
+.products-filter {
+    gap: 14px;
+}
+
+.filter-btn {
+    border: 1px solid var(--brand-border);
+    color: var(--brand-red);
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 8px 24px rgba(126, 7, 24, 0.06);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: transparent;
+    background: var(--theme-gradient-primary);
+    color: #fff;
+}
+
+.cart-sidebar {
+    border-left: 1px solid var(--brand-border);
+    box-shadow: -18px 0 48px rgba(126, 7, 24, 0.18);
+}
+
+.cart-header,
+.cart-footer {
+    background: var(--brand-ivory);
+    border-color: var(--brand-border);
+}
+
+.cart-header h3,
+.cart-total {
+    color: var(--brand-red-dark);
+}
+
+.btn-close {
+    color: var(--brand-red);
+}
+
 .service-icon,
 .intro-icon,
 .benefit-icon,
@@ -3379,6 +3446,17 @@ textarea {
     .surgery-card,
     .benefit-card {
         border-radius: var(--radius-md);
+    }
+
+    .btn-cart,
+    .cart-btn {
+        width: 44px;
+        min-width: 44px;
+    }
+
+    .cart-count {
+        top: 1px;
+        right: 1px;
     }
 }
 
