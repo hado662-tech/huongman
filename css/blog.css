@@ -249,3 +249,144 @@
         border-radius: 20px;
     }
 }
+
+
+/* Enhanced SEO article and image cards */
+.blog-card.featured-seo {
+    padding: 0;
+    overflow: hidden;
+}
+
+.blog-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--brand-gold-soft);
+}
+
+.blog-card-image img,
+.article-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 26px;
+}
+
+.article-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: var(--brand-muted);
+    font-size: 14px;
+}
+
+.article-breadcrumb a {
+    color: var(--brand-red);
+    font-weight: 700;
+}
+
+.article-hero-image {
+    margin: 0 0 30px;
+    overflow: hidden;
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+}
+
+.article-hero-image figcaption {
+    padding: 14px 18px;
+    color: var(--brand-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    background: rgba(255, 249, 240, 0.82);
+}
+
+.toc-box,
+.quick-answer,
+.faq-box,
+.related-reading {
+    margin-bottom: 30px;
+    padding: 24px;
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--brand-gold-soft), #fff);
+}
+
+.toc-box strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--brand-red-dark);
+    font-size: 18px;
+}
+
+.toc-box ol,
+.related-reading ul {
+    margin: 0 0 0 20px;
+}
+
+.toc-box a,
+.related-reading a,
+.article-content a:not(.back-link) {
+    color: var(--brand-red);
+    font-weight: 700;
+}
+
+.quick-answer h2,
+.faq-box h2,
+.related-reading h2 {
+    margin-top: 0;
+}
+
+.faq-entry {
+    padding: 18px 0;
+    border-top: 1px solid rgba(181, 18, 43, 0.12);
+}
+
+.faq-entry h3 {
+    margin-bottom: 8px;
+    color: var(--brand-red);
+    font-size: 19px;
+}
+
+@media (max-width: 768px) {
+    .blog-card-body {
+        padding: 22px;
+    }
+
+    .toc-box,
+    .quick-answer,
+    .faq-box,
+    .related-reading {
+        padding: 20px;
+    }
+}
+
+
+.logo-wordmark {
+    display: block;
+    font-family: 'Allura', cursive;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    background: linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 48%, var(--brand-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 968px) {
+    .logo-wordmark {
+        font-size: 24px;
+    }
+}
