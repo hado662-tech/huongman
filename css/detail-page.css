@@ -586,7 +586,8 @@
 
 .benefit-icon,
 .price-header,
-.btn-cta-primary {
+.btn-cta-primary,
+.btn-book-now {
     background: var(--theme-gradient-primary) !important;
 }
 
@@ -600,8 +601,30 @@
 }
 
 .btn-cta-primary,
-.btn-cta-secondary {
+.btn-cta-secondary,
+.btn-book-now {
     border-radius: var(--radius-md);
+}
+
+.btn-cta-primary,
+.btn-book-now {
+    color: #fff !important;
+    border-color: transparent !important;
+    box-shadow: 0 12px 28px rgba(181, 18, 43, 0.24) !important;
+}
+
+.btn-cta-primary:hover,
+.btn-book-now:hover {
+    color: #fff !important;
+    background: linear-gradient(135deg, var(--brand-red-dark), var(--brand-red)) !important;
+}
+
+.btn-cta-secondary {
+    border-color: rgba(255, 255, 255, 0.78);
+}
+
+.btn-cta-secondary:hover {
+    color: var(--brand-red-dark);
 }
 
 /* Responsive */
