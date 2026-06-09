@@ -28,7 +28,7 @@
   <!-- Blog & SEO Articles -->
   <url>
     <loc>https://thammyhuongman.com/blog.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -511,4 +511,60 @@
     <priority>0.8</priority>
   </url>
   
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/sua-mui-hong-thai-nguyen-co-sua-duoc-khong.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <image:image>
+      <image:loc>https://thammyhuongman.com/images/blog/sua-mui-hong-thai-nguyen-tu-van-huong-man.png</image:loc>
+      <image:title>Sửa mũi hỏng Thái Nguyên có sửa được không? Khi nào nên tư vấn lại</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/nang-nguc-thai-nguyen-can-chuan-bi-gi-truoc-khi-tu-van.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <image:image>
+      <image:loc>https://thammyhuongman.com/images/blog/nang-nguc-thai-nguyen-tu-van-size-huong-man.png</image:loc>
+      <image:title>Nâng ngực Thái Nguyên cần chuẩn bị gì trước khi tư vấn?</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/hut-mo-bung-thai-nguyen-bao-lau-hoi-phuc.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <image:image>
+      <image:loc>https://thammyhuongman.com/images/blog/hut-mo-bung-thai-nguyen-hoi-phuc-huong-man.png</image:loc>
+      <image:title>Hút mỡ bụng Thái Nguyên bao lâu hồi phục? Cần hỏi gì trước khi làm</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/tham-my-vung-kin-thai-nguyen-co-nen-tu-van-rieng-khong.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <image:image>
+      <image:loc>https://thammyhuongman.com/images/blog/tham-my-vung-kin-thai-nguyen-rieng-tu-huong-man.png</image:loc>
+      <image:title>Thẩm mỹ vùng kín Thái Nguyên có nên tư vấn riêng không?</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://thammyhuongman.com/blog/cay-mo-5d-thai-nguyen-phu-hop-voi-ai.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <image:image>
+      <image:loc>https://thammyhuongman.com/images/blog/cay-mo-5d-thai-nguyen-tu-van-huong-man.png</image:loc>
+      <image:title>Cấy mỡ 5D Thái Nguyên phù hợp với ai? Những điều nên hỏi trước</image:title>
+    </image:image>
+  </url>
+
 </urlset>
