@@ -1359,6 +1359,13 @@ section {
     transition: var(--transition);
 }
 
+.testimonial-card,
+.testimonial-card p,
+.testimonial-author h4,
+.testimonial-author span {
+    color: var(--text-dark);
+}
+
 .testimonial-card:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-5px);
@@ -1374,16 +1381,18 @@ section {
     font-style: italic;
     margin-bottom: 25px;
     line-height: 1.8;
+    color: var(--text-dark);
 }
 
 .testimonial-author h4 {
     font-size: 18px;
     margin-bottom: 5px;
+    color: var(--heading-dark);
 }
 
 .testimonial-author span {
     font-size: 14px;
-    color: var(--accent-color);
+    color: var(--text-muted);
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -3892,4 +3901,28 @@ textarea {
         color: var(--brand-red) !important;
         background: rgba(181, 18, 43, 0.08) !important;
     }
+}
+
+/* Keep review cards readable after the global theme turns testimonial backgrounds white. */
+.testimonials .testimonial-card,
+.testimonials .testimonial-card p,
+.testimonials .testimonial-author h4,
+.testimonials .testimonial-author span {
+    color: var(--brand-ink) !important;
+}
+
+.testimonials .testimonial-card p {
+    color: var(--text-dark) !important;
+}
+
+.testimonials .testimonial-author h4 {
+    color: var(--heading-dark) !important;
+}
+
+.testimonials .testimonial-author span {
+    color: var(--text-muted) !important;
+}
+
+.testimonials .stars {
+    color: #d7a64a !important;
 }
