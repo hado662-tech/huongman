@@ -1,0 +1,25 @@
+{
+  "name": "tham-my-huong-man",
+  "version": "1.0.0",
+  "description": "Thẩm Mỹ Viện Hương Mận - Website Static HTML",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs"
+  },
+  "keywords": [
+    "static-site",
+    "beauty-clinic",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Thẩm Mỹ Viện Hương Mận",
+  "license": "MIT",
+  "devDependencies": {
+    "cheerio": "^1.1.2"
+  }
+}
