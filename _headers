@@ -11,6 +11,12 @@
 /images/brand/*
   Cache-Control: public, max-age=604800
 
+/images/original/*
+  Cache-Control: public, max-age=604800
+
+/images/inspiration/*
+  Cache-Control: public, max-age=604800
+
 /site/*
   X-Robots-Tag: noindex
 

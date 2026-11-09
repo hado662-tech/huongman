@@ -1,9 +1,49 @@
 import { readFileSync } from "node:fs";
+import { brand } from "./config.mjs";
 
 const articles = JSON.parse(
   readFileSync(new URL("./articles.json", import.meta.url), "utf8"),
 );
 const entries = [
+  {
+    path: "phun-xam/phun-moi.html",
+    name: "Phun môi",
+    category: "pmu",
+    imageKey: "team",
+    match: "phun-moi",
+    intro:
+      "Tìm hiểu phun môi tại Thái Nguyên cùng Hương Mận: trao đổi nền môi, màu mong muốn, chi phí và những câu hỏi cần chuẩn bị trước buổi tư vấn.",
+    concerns: ["Màu môi phù hợp", "Nền môi đã từng phun", "Chi phí & chăm sóc"],
+    heading: "Chọn màu môi bắt đầu từ nét riêng của bạn",
+    paragraphs: [
+      "Một màu môi đẹp trên ảnh chưa chắc phù hợp với mọi người. Khi tư vấn phun môi, bạn có thể chia sẻ tông màu thường dùng, phong cách trang điểm và mong muốn về độ tự nhiên. Mang theo ảnh tham khảo để diễn đạt ý thích, không dùng ảnh đó như cam kết kết quả.",
+      "Nếu đã phun môi hoặc xử lý màu trước đây, hãy cho biết thời điểm, phương án đã làm và điều còn băn khoăn. Hỏi người tư vấn cách đánh giá nền môi hiện tại, giới hạn của phương án được đề xuất và có cần kiểm tra thêm trước khi thực hiện hay không.",
+      "Trước khi đặt lịch, hãy xác nhận người phụ trách, địa điểm thực hiện, vật tư sử dụng và các bước vệ sinh. Yêu cầu giải thích những rủi ro cần cân nhắc, hướng dẫn chăm sóc bằng văn bản và nơi liên hệ khi có vấn đề. Không lựa chọn chỉ từ lời quảng cáo không đau hoặc lên màu giống hệt ảnh mẫu.",
+    ],
+    question: "Có thể chốt màu phun môi qua ảnh không?",
+    answer:
+      "Ảnh giúp trao đổi sở thích ban đầu nhưng ánh sáng và bộ lọc có thể làm thay đổi màu. Nên xem xét nền môi trực tiếp và hỏi về giới hạn của phương án trước khi thống nhất lựa chọn.",
+  },
+  {
+    path: "phun-xam/phun-may.html",
+    name: "Phun mày",
+    category: "pmu",
+    imageKey: "brows",
+    match: "phun-may",
+    intro:
+      "Tư vấn phun mày tại Thái Nguyên: tìm hiểu dáng lông mày, màu sắc, nền mày cũ và chi phí tại Hương Mận. Chuẩn bị câu hỏi trước khi lựa chọn.",
+    concerns: ["Dáng mày hài hòa", "Màu sắc tự nhiên", "Đánh giá nền mày cũ"],
+    heading: "Dáng lông mày cần phù hợp với gương mặt và thói quen",
+    paragraphs: [
+      "Bạn thích chân mày mềm nhẹ hay rõ nét, thường trang điểm thế nào và muốn thay đổi phần nào của dáng mày? Những câu hỏi này giúp buổi tư vấn phun mày đi vào nhu cầu cụ thể hơn việc chỉ chọn một dáng đang được nhiều người quan tâm.",
+      "Hãy đề nghị được trao đổi về bản phác dáng trước khi quyết định: điểm bắt đầu, độ cong, chiều dài đuôi mày và màu dự kiến. Quan sát cả gương mặt thay vì chỉ nhìn sát từng bên lông mày. Làm rõ những điều có thể điều chỉnh và những giới hạn cần chấp nhận.",
+      "Nếu quan tâm phun mày tán bột, điêu khắc hoặc hairstroke, hãy hỏi kỹ thuật nào thực sự được cung cấp và vì sao phù hợp với nền mày của bạn. Các tên gọi không tự chứng minh chất lượng hoặc bảo đảm cùng một kết quả cho mọi người.",
+      "Với mày đã phun, hãy cho biết lần thực hiện gần nhất, màu còn lại và phần muốn sửa. Cần xem xét trực tiếp trước khi thống nhất phương án; không mặc định có thể phun chồng để xử lý mọi nền mày cũ. Hỏi rõ việc chăm sóc, lịch kiểm tra lại và cách liên hệ sau dịch vụ.",
+    ],
+    question: "Mày đã phun trước đây có làm lại được không?",
+    answer:
+      "Cần xem nền màu và dáng hiện tại trước khi bàn phương án. Bạn nên chuẩn bị thông tin lần làm trước, nêu rõ điều muốn đổi và hỏi giới hạn, chi phí của từng lựa chọn. Phương án cần được trao đổi trực tiếp, không chỉ qua ảnh.",
+  },
   {
     path: "derma/tri-nam.html",
     name: "Trị nám",
@@ -481,7 +521,7 @@ export const services = entries.map((entry) => ({
       heading: `Chi phí ${entry.name.toLowerCase()} cần hỏi như thế nào?`,
       paragraphs: [
         `Khi tìm hiểu giá ${entry.name.toLowerCase()} tại Thái Nguyên, hãy yêu cầu báo giá cho phương án cụ thể. Làm rõ các khoản thăm khám, thực hiện, sản phẩm hoặc vật liệu nếu có, chăm sóc và theo dõi; hỏi khoản nào chưa nằm trong giá.`,
-        `Website chưa công bố bảng giá được xác nhận cho từng trường hợp. Bạn có thể gọi 0383 119 119 để trao đổi nhu cầu và xác nhận thông tin trước khi đến. Không nên lấy giá của một review cũ làm mức giá mặc định cho mình.`,
+        `Liên hệ ${brand.phone} để trao đổi nhu cầu và nhận thông tin chi phí. Báo giá cần phù hợp với phương án cụ thể, kèm các khoản đã bao gồm và điều kiện chăm sóc sau dịch vụ.`,
       ],
     },
     {
@@ -501,8 +541,7 @@ export const services = entries.map((entry) => ({
     },
     {
       question: "Đặt lịch trao đổi với Hương Mận bằng cách nào?",
-      answer:
-        "Gọi 0383 119 119 hoặc nhắn qua trang Facebook Hương Mận, nêu chủ đề quan tâm và thời gian thuận tiện. Lịch chỉ được xác nhận sau khi bạn đã trao đổi trực tiếp.",
+      answer: `Gọi ${brand.phone} hoặc nhắn Facebook Hương Mận, chia sẻ dịch vụ bạn quan tâm và thời gian thuận tiện. Hương Mận sẽ trao đổi trực tiếp để xác nhận lịch hẹn.`,
     },
   ],
   relatedArticles: articles

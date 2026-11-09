@@ -4,8 +4,8 @@
   "@id": "https://thammyhuongman.com/#business",
   "name": "Thẩm mỹ viện Hương Mận",
   "url": "https://thammyhuongman.com/",
-  "telephone": "+84383119119",
-  "image": "https://thammyhuongman.com/images/brand/social.jpg",
+  "telephone": "+84859933640",
+  "image": "https://thammyhuongman.com/images/original/team.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "402 Lương Ngọc Quyến, Phan Đình Phùng",
@@ -19,6 +19,7 @@
   "sameAs": [
     "https://www.facebook.com/ThammyhuongmanTN"
   ],
+  "hasMap": "https://www.google.com/maps/dir/?api=1&destination=Tham+My+Huong+Man+402+Luong+Ngoc+Quyen+Thai+Nguyen&destination_place_id=ChIJ32AOpN8mNTERljxwvmt6hcA",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
