@@ -1,9 +1,5 @@
-import { readFileSync } from "node:fs";
 import { brand } from "./config.mjs";
-
-const articles = JSON.parse(
-  readFileSync(new URL("./articles.json", import.meta.url), "utf8"),
-);
+import { articles } from "./articles.mjs";
 const entries = [
   {
     path: "phun-xam/phun-moi.html",
@@ -545,7 +541,7 @@ export const services = entries.map((entry) => ({
     },
   ],
   relatedArticles: articles
-    .filter((a) => a.path.includes(entry.match))
+    .filter((a) => a.servicePaths ? a.servicePaths.includes(entry.path) : a.path.includes(entry.match))
     .slice(0, 3)
     .map((a) => a.path),
 }));

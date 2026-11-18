@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, cp, readdir } from "node:fs/promises";
 import { dirname } from "node:path";
 import { load } from "cheerio";
 import { brand, topics, homeFaq } from "../site/config.mjs";
+import { articles } from "../site/articles.mjs";
 import { services } from "../site/services.mjs";
 import { homepage } from "../site/home.mjs";
 import { inspirationSection } from "../site/inspiration.mjs";
@@ -23,12 +24,6 @@ import {
   organization,
 } from "../site/components.mjs";
 
-const articles = JSON.parse(await readFile("site/articles.json", "utf8")).map(
-  (article) => ({
-    ...article,
-    tag: article.tag === "Local SEO" ? "Kinh nghiệm làm đẹp" : article.tag,
-  }),
-);
 const emitted = new Map();
 const sectionHead = (eyebrow, title, extra = "") =>
   `<div class="section-heading"><div><span class="eyebrow">${eyebrow}</span><h2>${title}</h2></div>${extra}</div>`;
@@ -37,9 +32,9 @@ const pageHero = (eyebrow, title, description) =>
 const intro = `<p class="editorial-note">Nội dung giúp bạn chuẩn bị cho buổi tư vấn, không thay thế việc thăm khám hay chỉ định chuyên môn. Hiệu quả, chi phí và thời gian hồi phục cần được trao đổi theo từng trường hợp.</p>`;
 const blogLink = (path) => articles.find((a) => a.path.includes(path));
 const featured = [
-  blogLink("dich-vu-noi-bat-cua-tham-my-huong-man"),
-  blogLink("dat-lich-tu-van-tham-my-huong-man-thai-nguyen"),
-  blogLink("tham-my-vien-uy-tin-thai-nguyen-5-tieu-chi"),
+  blogLink("cam-nang-phun-moi-phun-may-thai-nguyen"),
+  blogLink("gia-phun-moi-thai-nguyen-chi-phi-dam-khu-tham"),
+  blogLink("phun-may-tan-bot-va-hairstroke-khac-nhau-the-nao"),
 ].filter(Boolean);
 async function emit(path, title, description, body, options = {}) {
   const html = page({ path, title, description, ...options }, body);
@@ -132,7 +127,7 @@ await emit(
   "blog.html",
   "Cẩm nang thẩm mỹ Hương Mận | Làm đẹp tại Thái Nguyên",
   "Tìm hiểu chi phí, cách đọc review, chăm sóc da và các câu hỏi trước khi làm đẹp tại Thái Nguyên. Cẩm nang dịch vụ và thông tin Hương Mận.",
-  `${breadcrumb([["Cẩm nang"]])}${pageHero("Cẩm nang Hương Mận", "Đẹp hơn, từ những điều hiểu rõ.", "Thông tin thiết thực về lựa chọn làm đẹp, chi phí và những câu hỏi trước khi quyết định. Tìm chủ đề bạn quan tâm, theo cách dễ hiểu hơn.")}<section class="section" data-directory="articles"><div class="container">${filters("articles")}<p class="result-count" data-result-count role="status">${articles.length} bài viết</p><div class="article-grid">${[...featured, ...articles.filter((a) => !featured.includes(a))].map(articleCard).join("")}</div><p class="empty-state" data-empty hidden>Chưa tìm thấy bài viết. Bạn có thể tìm không dấu, ví dụ “tri nam”, hoặc chọn lại “Tất cả”.</p></div></section>${contactBand()}`,
+  `${breadcrumb([["Cẩm nang"]])}${pageHero("Cẩm nang Hương Mận", "Cẩm nang phun môi, phun mày và chăm sóc sắc đẹp", "Thông tin thiết thực về lựa chọn làm đẹp, chi phí và những câu hỏi trước khi quyết định. Tìm chủ đề bạn quan tâm, theo cách dễ hiểu hơn.")}<section class="section" data-directory="articles"><div class="container">${filters("articles")}<p class="result-count" data-result-count role="status">${articles.length} bài viết</p><div class="article-grid">${[...featured, ...articles.filter((a) => !featured.includes(a))].map(articleCard).join("")}</div><p class="empty-state" data-empty hidden>Chưa tìm thấy bài viết. Bạn có thể tìm không dấu, ví dụ “tri nam”, hoặc chọn lại “Tất cả”.</p></div></section>${contactBand()}`,
   {
     schemas: [
       breadcrumbSchema([["Cẩm nang", "blog.html"]]),
@@ -163,11 +158,16 @@ for (const article of articles) {
   const wordCount = ($("#copy").text() + " " + article.lead).split(
     /\s+/,
   ).length;
-  const related = articles
-    .filter((a) => a !== article && a.topic === article.topic)
-    .slice(0, 3);
-  const candidates = services.filter((s) =>
-    (s.relatedArticles || []).some((p) => p === article.path),
+  const preferredRelated = (article.relatedPaths || [])
+    .map((path) => articles.find((candidate) => candidate.path === path))
+    .filter(Boolean);
+  const related = [...preferredRelated, ...articles.filter((candidate) =>
+    candidate !== article && candidate.topic === article.topic && !preferredRelated.includes(candidate),
+  )].slice(0, 3);
+  const candidates = services.filter((service) =>
+    article.servicePaths
+      ? article.servicePaths.includes(service.path)
+      : (service.relatedArticles || []).includes(article.path),
   );
   const relatedServices = (
     candidates.length
@@ -178,7 +178,7 @@ for (const article of articles) {
     ? `<div class="editorial-note"><strong>Tìm hiểu dịch vụ liên quan</strong><ul>${relatedServices.map((s) => `<li><a href="${url(s.path)}">${e(s.name)} tại Thái Nguyên</a></li>`).join("")}</ul></div>`
     : "";
   const key = article.imageKey || (article.topic === "skin" ? "care" : "team");
-  const body = `${breadcrumb([["Cẩm nang", "blog.html"], [article.tag]])}<div class="container page-article"><header class="article-header"><span class="eyebrow">${e(article.tag)} · Cẩm nang Hương Mận</span><h1>${e(article.title)}</h1><p class="lead">${e(article.lead)}</p><div class="byline"><span>Ban biên tập Hương Mận</span><span>${Math.max(2, Math.ceil(wordCount / 210))} phút đọc</span><a href="/nguyen-tac-noi-dung">Nguyên tắc nội dung</a></div></header><div class="article-layout"><article class="article-body"><figure class="article-cover">${picture(key, { eager: true })}<figcaption>${imageCaption}</figcaption></figure><div class="prose">${copy}${/review|co-tot-khong/.test(article.path) ? '<p class="editorial-note">Bài viết hướng dẫn cách tìm hiểu và đánh giá dịch vụ, không phải lời chứng thực của khách hàng hoặc kết luận chất lượng đã được kiểm chứng độc lập.</p>' : ""}${intro}${relatedServiceHtml}</div></article><aside class="article-aside"><div class="toc"><h2>Trong bài viết này</h2><ol>${headings.map(([id, label]) => `<li><a href="#${id}">${e(label)}</a></li>`).join("")}</ol><div class="aside-contact"><p>Bạn có câu hỏi riêng về nhu cầu của mình?</p><a class="button" href="/lien-he">Trao đổi cùng Hương Mận ${icon("arrow")}</a></div></div></aside></div></div><section class="section journal"><div class="container"><h2 class="related-heading">Có thể bạn muốn đọc</h2><div class="article-grid">${related.map(articleCard).join("")}</div></div></section>${contactBand()}`;
+  const body = `${breadcrumb([["Cẩm nang", "blog.html"], [article.tag]])}<div class="container page-article"><header class="article-header"><span class="eyebrow">${e(article.tag)} · Cẩm nang Hương Mận</span><h1>${e(article.title)}</h1><p class="lead">${e(article.lead)}</p><div class="byline"><span>Ban biên tập Hương Mận</span>${article.datePublished ? `<time datetime="${e(article.datePublished)}">Đăng ngày ${e(article.datePublished.split("-").reverse().join("/"))}</time>` : ""}<span>${Math.max(2, Math.ceil(wordCount / 210))} phút đọc</span><a href="/nguyen-tac-noi-dung">Nguyên tắc nội dung</a></div></header><div class="article-layout"><article class="article-body"><figure class="article-cover">${picture(key, { eager: true })}<figcaption>${imageCaption}</figcaption></figure><div class="prose">${copy}${/review|co-tot-khong/.test(article.path) ? '<p class="editorial-note">Bài viết hướng dẫn cách tìm hiểu và đánh giá dịch vụ, không phải lời chứng thực của khách hàng hoặc kết luận chất lượng đã được kiểm chứng độc lập.</p>' : ""}${intro}${relatedServiceHtml}</div></article><aside class="article-aside"><div class="toc"><h2>Trong bài viết này</h2><ol>${headings.map(([id, label]) => `<li><a href="#${id}">${e(label)}</a></li>`).join("")}</ol><div class="aside-contact"><p>Bạn có câu hỏi riêng về nhu cầu của mình?</p><a class="button" href="/lien-he">Trao đổi cùng Hương Mận ${icon("arrow")}</a></div></div></aside></div></div><section class="section journal"><div class="container"><h2 class="related-heading">Có thể bạn muốn đọc</h2><div class="article-grid">${related.map(articleCard).join("")}</div></div></section>${contactBand()}`;
   await emit(
     article.path,
     /hương mận/i.test(article.title)
@@ -188,6 +188,7 @@ for (const article of articles) {
     body,
     {
       type: "article",
+      imageKey: key,
       schemas: [
         breadcrumbSchema([
           ["Cẩm nang", "blog.html"],
@@ -201,6 +202,9 @@ for (const article of articles) {
           mainEntityOfPage: absolute(article.path),
           image: brand.url + imagePath(key),
           inLanguage: "vi-VN",
+          ...(article.datePublished && { datePublished: article.datePublished }),
+          articleSection: topics[article.topic],
+          wordCount,
           author: {
             "@type": "Organization",
             name: "Ban biên tập Hương Mận",
@@ -233,7 +237,7 @@ for (const s of services) {
     s.path,
     s.title,
     s.description,
-    `${breadcrumb([["Dịch vụ", "dich-vu.html"], [s.name]])}<section class="page-hero"><div class="container service-intro"><div><span class="eyebrow">${topics[s.category]} · Thái Nguyên</span><h1>${e(s.name)}<br><span style="color:var(--gold)">Tư vấn theo nhu cầu của bạn.</span></h1><p>${e(s.intro)}</p><a class="button" href="/lien-he">Đặt lịch tư vấn ${icon("arrow")}</a><div class="service-highlights">${s.concerns.map((x) => `<span>${e(x)}</span>`).join("")}</div></div><figure style="margin:0">${picture(s.imageKey, { eager: true })}<figcaption class="image-caption">${imageCaption}</figcaption></figure></div></section><section class="section"><div class="container service-content-grid"><article><div class="prose">${content}${intro}</div><h2 class="related-heading" style="margin-top:40px">Câu hỏi thường gặp</h2>${faq(s.faq)}</article><aside class="article-aside"><div class="toc"><h2>Nội dung bạn cần biết</h2><ol>${headings.map(([id, label]) => `<li><a href="#${id}">${e(label)}</a></li>`).join("")}</ol><div class="aside-contact"><p>${brand.address}</p><a class="button" href="${brand.phoneHref}">${icon("phone")} ${brand.phone}</a></div></div></aside></div></section>${related.length ? `<section class="section journal"><div class="container"><h2 class="related-heading">Tìm hiểu thêm về ${e(s.name.toLowerCase())}</h2><div class="article-grid">${related.map(articleCard).join("")}</div></div></section>` : ""}${contactBand()}`,
+    `${breadcrumb([["Dịch vụ", "dich-vu.html"], [s.name]])}<section class="page-hero"><div class="container service-intro"><div><span class="eyebrow">${topics[s.category]} · Thái Nguyên</span><h1>${e(s.name)}${s.category === "pmu" ? ' <span style="color:var(--gold)">tại Thái Nguyên</span>' : '<br><span style="color:var(--gold)">Tư vấn theo nhu cầu của bạn.</span>'}</h1><p>${e(s.intro)}</p><a class="button" href="/lien-he">Đặt lịch tư vấn ${icon("arrow")}</a><div class="service-highlights">${s.concerns.map((x) => `<span>${e(x)}</span>`).join("")}</div></div><figure style="margin:0">${picture(s.imageKey, { eager: true })}<figcaption class="image-caption">${imageCaption}</figcaption></figure></div></section><section class="section"><div class="container service-content-grid"><article><div class="prose">${content}${intro}</div><h2 class="related-heading" style="margin-top:40px">Câu hỏi thường gặp</h2>${faq(s.faq)}</article><aside class="article-aside"><div class="toc"><h2>Nội dung bạn cần biết</h2><ol>${headings.map(([id, label]) => `<li><a href="#${id}">${e(label)}</a></li>`).join("")}</ol><div class="aside-contact"><p>${brand.address}</p><a class="button" href="${brand.phoneHref}">${icon("phone")} ${brand.phone}</a></div></div></aside></div></section>${related.length ? `<section class="section journal"><div class="container"><h2 class="related-heading">Tìm hiểu thêm về ${e(s.name.toLowerCase())}</h2><div class="article-grid">${related.map(articleCard).join("")}</div></div></section>` : ""}${contactBand()}`,
     {
       schemas: [
         breadcrumbSchema([

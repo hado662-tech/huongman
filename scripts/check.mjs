@@ -3,6 +3,7 @@ import { resolve, extname } from "node:path";
 import { load } from "cheerio";
 import { services } from "../site/services.mjs";
 import { brand } from "../site/config.mjs";
+import { articles } from "../site/articles.mjs";
 const root = resolve("dist");
 const errors = [];
 async function walk(dir) {
@@ -16,7 +17,6 @@ async function walk(dir) {
 }
 const paths = await walk(root);
 const pages = paths.filter((p) => p.endsWith(".html"));
-const articles = JSON.parse(await readFile("site/articles.json", "utf8"));
 const expected = new Set([
   "index.html",
   "blog.html",

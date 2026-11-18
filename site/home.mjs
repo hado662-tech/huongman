@@ -56,8 +56,8 @@ export function homepage() {
         <section class="customer-section" id="customers" aria-labelledby="customer-title" data-carousel>
           <header class="center-heading"><span class="eyebrow">Trước cuộc hẹn của bạn</span><h2 id="customer-title">Hiểu rõ hơn, lựa chọn nhẹ nhàng hơn</h2></header>
           <div class="customer-grid pmu-questions" id="questions-track" data-carousel-track tabindex="0" role="region" aria-label="Câu hỏi trước cuộc hẹn">
-            <article class="question-card"><span class="quote-mark">01</span><h3>Phun môi chọn màu nào?</h3><p>Bắt đầu từ nền môi, phong cách thường ngày và sắc màu bạn yêu thích. Ảnh tham khảo không thay thế buổi tư vấn.</p><a href="/phun-xam/phun-moi">Tìm hiểu phun môi ${icon("arrow")}</a></article>
-            <article class="question-card"><span class="quote-mark">02</span><h3>Mày cũ có làm lại được không?</h3><p>Chia sẻ màu mày hiện tại, thời điểm đã làm và phần muốn thay đổi để được tư vấn trực tiếp.</p><a href="/phun-xam/phun-may">Tìm hiểu phun mày ${icon("arrow")}</a></article>
+            <article class="question-card"><span class="quote-mark">01</span><h3>Phun môi chọn màu nào?</h3><p>Bắt đầu từ nền môi, phong cách thường ngày và sắc màu bạn yêu thích. Ảnh tham khảo không thay thế buổi tư vấn.</p><a href="/blog/da-ngam-phun-moi-mau-gi">Gợi ý chọn màu cho da ngăm ${icon("arrow")}</a></article>
+            <article class="question-card"><span class="quote-mark">02</span><h3>Mày cũ có làm lại được không?</h3><p>Chia sẻ màu mày hiện tại, thời điểm đã làm và phần muốn thay đổi để được tư vấn trực tiếp.</p><a href="/blog/long-may-cu-tro-do-tro-xanh-co-phun-chong-duoc-khong">Tìm hiểu về mày cũ trổ màu ${icon("arrow")}</a></article>
             <article class="question-card"><span class="quote-mark">03</span><h3>Chi phí gồm những gì?</h3><p>Hỏi rõ phương án, hướng dẫn chăm sóc và điều kiện kiểm tra, dặm lại nếu có trước khi quyết định.</p><a href="/bang-gia">Tìm hiểu chi phí ${icon("arrow")}</a></article>
           </div>
           <div class="carousel-controls" data-carousel-controls hidden><span>Chạm để khám phá <span data-carousel-count aria-live="polite" aria-atomic="true">1 / 3</span></span><div><button type="button" data-carousel-prev aria-label="Câu hỏi trước" aria-controls="questions-track" disabled>${icon("arrow")}</button><button type="button" data-carousel-next aria-label="Câu hỏi tiếp theo" aria-controls="questions-track">${icon("arrow")}</button></div></div>
@@ -70,7 +70,7 @@ export function homepage() {
 
     <section class="section original-gallery"><div class="container"><header class="section-heading"><div><span class="eyebrow">Những hình ảnh thân quen</span><h2>Hương Mận, qua từng khoảnh khắc.</h2></div><a class="text-link" href="/gioi-thieu">Về Hương Mận ${icon("arrow")}</a></header><div class="original-gallery-grid"><figure>${picture("founder")}<figcaption>Chị Giang Thị Hương Mận.</figcaption></figure><figure>${picture("event")}<figcaption>Hương Mận kết nối tại hội nghị ngành làm đẹp.</figcaption></figure></div></div></section>
     ${inspirationSection()}
-    <section class="section home-faq" id="giai-dap"><div class="container faq-layout"><div class="faq-intro"><span class="eyebrow">Hương Mận giải đáp</span><h2>Bạn hỏi, mình cùng tìm hiểu.</h2><p>Phun môi, phun mày, chi phí và đặt lịch tại Thái Nguyên.</p><a class="text-link" href="/blog">Đọc thêm cẩm nang ${icon("arrow")}</a></div>${faq(homeFaq)}</div></section>
+    <section class="section home-faq" id="giai-dap"><div class="container faq-layout"><div class="faq-intro"><span class="eyebrow">Hương Mận giải đáp</span><h2>Bạn hỏi, mình cùng tìm hiểu.</h2><p>Phun môi, phun mày, chi phí và đặt lịch tại Thái Nguyên.</p><a class="text-link" href="/blog/cam-nang-phun-moi-phun-may-thai-nguyen">Đọc cẩm nang phun môi, phun mày ${icon("arrow")}</a></div>${faq(homeFaq)}</div></section>
     ${contactBand()}
   </div>`;
 }
