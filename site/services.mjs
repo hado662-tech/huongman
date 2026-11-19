@@ -17,6 +17,10 @@ const entries = [
       "Trước khi đặt lịch, hãy xác nhận người phụ trách, địa điểm thực hiện, vật tư sử dụng và các bước vệ sinh. Yêu cầu giải thích những rủi ro cần cân nhắc, hướng dẫn chăm sóc bằng văn bản và nơi liên hệ khi có vấn đề. Không lựa chọn chỉ từ lời quảng cáo không đau hoặc lên màu giống hệt ảnh mẫu.",
     ],
     question: "Có thể chốt màu phun môi qua ảnh không?",
+    localQuestion: {
+      question: "Ở Thái Nguyên, nên chọn nơi phun môi thế nào nếu môi đã từng phun?",
+      answer: `Hãy hỏi liệu người trực tiếp làm có xem nền môi cũ trước khi báo giá và có ảnh màu đã lành để đối chiếu không. Nếu có đề xuất xử lý nền, xin tách khoản đó khỏi giá phun và phí dặm. Bạn có thể hẹn tư vấn với Hương Mận tại ${brand.address} trước khi quyết định.`,
+    },
     answer:
       "Ảnh giúp trao đổi sở thích ban đầu nhưng ánh sáng và bộ lọc có thể làm thay đổi màu. Nên xem xét nền môi trực tiếp và hỏi về giới hạn của phương án trước khi thống nhất lựa chọn.",
   },
@@ -37,6 +41,10 @@ const entries = [
       "Với mày đã phun, hãy cho biết lần thực hiện gần nhất, màu còn lại và phần muốn sửa. Cần xem xét trực tiếp trước khi thống nhất phương án; không mặc định có thể phun chồng để xử lý mọi nền mày cũ. Hỏi rõ việc chăm sóc, lịch kiểm tra lại và cách liên hệ sau dịch vụ.",
     ],
     question: "Mày đã phun trước đây có làm lại được không?",
+    localQuestion: {
+      question: "Muốn làm chân mày tự nhiên ở Thái Nguyên, nên chọn nơi nào?",
+      answer: `Ưu tiên nơi cho bạn xem và chỉnh bản vẽ trước khi làm, đồng thời có ảnh dáng mày đã lành của người thường để mặt mộc như bạn. Nếu đến Hương Mận tại ${brand.address}, hãy nói rõ bạn muốn giữ phần nào của dáng mày hiện tại để hỏi cách chỉnh cụ thể.`,
+    },
     answer:
       "Cần xem nền màu và dáng hiện tại trước khi bàn phương án. Bạn nên chuẩn bị thông tin lần làm trước, nêu rõ điều muốn đổi và hỏi giới hạn, chi phí của từng lựa chọn. Phương án cần được trao đổi trực tiếp, không chỉ qua ảnh.",
   },
@@ -529,6 +537,7 @@ export const services = entries.map((entry) => ({
     },
   ],
   faq: [
+    ...(entry.localQuestion ? [entry.localQuestion] : []),
     { question: entry.question, answer: entry.answer },
     {
       question: `Có thể nhận giá ${entry.name.toLowerCase()} trước khi đến không?`,
